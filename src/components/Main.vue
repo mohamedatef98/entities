@@ -22,6 +22,7 @@
         <entity class="entity" v-model="entities[index]" @deleted="remove_entity(index)"/>
       </v-flex>
     </v-layout>
+    <v-btn @click="log()">console.log Data</v-btn>
   </v-container>
 </template>
 
@@ -50,6 +51,10 @@
       remove_entity(index){
         console.log(index);
         this.entities.splice(index, 1);
+      },
+
+      log(){
+        console.log(this.entities)
       }
 
 

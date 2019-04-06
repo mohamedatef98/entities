@@ -2,11 +2,7 @@
    <v-card>
         <v-card-title primary-title>
             <v-layout row justify-space-between>
-                <v-text-field
-                    label="Name"
-                    :value="entity.name"
-                    @input="$emit('change', {...entity, name: $event})"
-                ></v-text-field>
+                <label-and-input label="Entity Name" v-model="entity.name" bold/>
                 <v-icon @click="$emit('deleted')">cancel</v-icon>
             </v-layout>
         </v-card-title>
@@ -19,9 +15,11 @@
 
 <script>
   import Attribute from './Attribute'
+  import LabelAndInput from './LabelAndInput'
   export default {
     components: {
-        Attribute
+        Attribute,
+        LabelAndInput
     },
     props: {
         entity: {
